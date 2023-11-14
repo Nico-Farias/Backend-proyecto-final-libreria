@@ -1,0 +1,330 @@
+[
+    {
+        "title": "Caos Magali Tajes",
+        "categoria": "poesia",
+        "image": "https://imgur.com/jxYUhQ1.jpg",
+        "price": 2999,
+        "stock": 20,
+        "vendedor": "654d0489f034f7335f833382"
+    },
+    {
+        "title": "Culpa mia Mercedes Ron",
+        "categoria": "ficcion",
+        "image": "https://imgur.com/mcEH66J.jpg",
+        "price": 3233,
+        "stock": 20,
+        "vendedor": "654d0489f034f7335f833382"
+    },
+    {
+        "title": "El dia que dejo de helar en alazca",
+        "categoria": "ficcion",
+        "image": "https://imgur.com/mGhVoIP.jpg",
+        "price": 3799,
+        "stock": 20,
+        "vendedor": "654d0489f034f7335f833382"
+    },
+    {
+        "title": "Ciudades de ceniza trilogia",
+        "categoria": "juvenil",
+        "image": "https://imgur.com/H7sleLh.jpg",
+        "price": 2420,
+        "stock": 20,
+        "vendedor": "654d0489f034f7335f833382"
+    },
+    {
+        "title": "Furia tracy wolff",
+        "categoria": "ficcion",
+        "image": "https://imgur.com/r73SmJN.jpg",
+        "price": 3410,
+        "stock": 20,
+        "vendedor": "654d0489f034f7335f833382"
+    },
+    {
+        "title": "Despues del boulevart",
+        "categoria": "juvenil",
+        "image": "https://imgur.com/PVVu2mr.jpg",
+        "price": 2899,
+        "stock": 20,
+        "vendedor": "654d0489f034f7335f833382"
+    },
+    {
+        "title": "Arde la vida Magali Tajes",
+        "categoria": "poesia",
+        "image": "https://imgur.com/IZ5KJiF.jpg",
+        "price": 2699,
+        "stock": 20,
+        "vendedor": "654d0489f034f7335f833382"
+    },
+    {
+        "title": "Culpa tuya Mercedes Ron",
+        "categoria": "ficcion",
+        "image": "https://imgur.com/6OH0veU.jpg",
+        "price": 3533,
+        "stock": 20,
+        "vendedor": "654d0489f034f7335f833382"
+    },
+    {
+        "title": "Nosotros en la luna Alice Kellen",
+        "categoria": "ficcion",
+        "image": "https://imgur.com/V24NW2x.jpg",
+        "price": 1799,
+        "stock": 20,
+        "vendedor": "654d0489f034f7335f833382"
+    },
+    {
+        "title": "Malibu renace",
+        "categoria": "ficcion",
+        "image": "https://imgur.com/0xCwvBi.jpg",
+        "price": 2120,
+        "stock": 20,
+        "vendedor": "654d0489f034f7335f833382"
+    },
+    {
+        "title": "Los siete maridos de Evelyn",
+        "categoria": "ficcion",
+        "image": "https://imgur.com/ZyJanhT.jpg",
+        "price": 3110,
+        "stock": 20,
+        "vendedor": "654d0489f034f7335f833382"
+    },
+    {
+        "title": "Perfectos mentirosos",
+        "categoria": "ficcion",
+        "image": "https://imgur.com/KQ9Ixz1.jpg",
+        "price": 2399,
+        "stock": 20,
+        "vendedor": "654d0489f034f7335f833382"
+    },
+    {
+        "title": "Un cuento perfecto",
+        "categoria": "ficcion",
+        "image": "https://imgur.com/J8p1o4r.jpg",
+        "price": 2199,
+        "stock": 20,
+        "vendedor": "654d0489f034f7335f833382"
+    },
+    {
+        "title": "Heartstopper",
+        "categoria": "infantil",
+        "image": "https://imgur.com/u8779lQ.jpg",
+        "price": 3733,
+        "stock": 20,
+        "vendedor": "654d0489f034f7335f833382"
+    },
+    {
+        "title": "Heartstopper 2",
+        "categoria": "infantil",
+        "image": "https://imgur.com/bTjAPKw.jpg",
+        "price": 3440,
+        "stock": 20,
+        "vendedor": "654d0489f034f7335f833382"
+    },
+    {
+        "title": "Fleur",
+        "categoria": "ficcion",
+        "image": "https://imgur.com/ACLnPFX.jpg",
+        "price": 2520,
+        "stock": 20,
+        "vendedor": "654d0489f034f7335f833382"
+    },
+    {
+        "title": "Antes de diciembre",
+        "categoria": "ficcion",
+        "image": "https://imgur.com/WAKDWpM.jpg",
+        "price": 3025,
+        "stock": 20,
+        "vendedor": "654d0489f034f7335f833382"
+    },
+    {
+        "title": "Scott pilgrim lo consigue",
+        "categoria": "comics",
+        "image": "https://imgur.com/23IECEg.jpg",
+        "price": 1899,
+        "stock": 20,
+        "vendedor": "654d0489f034f7335f833382"
+    },
+    {
+        "title": "Iznogud ve las estrellas",
+        "categoria": "comics",
+        "image": "https://imgur.com/23yM2kZ.jpg",
+        "price": 2195,
+        "stock": 20,
+        "vendedor": "654d0489f034f7335f833382"
+    },
+    {
+        "title": "Naftalina",
+        "categoria": "comics",
+        "image": "https://imgur.com/EjegB2i.jpg",
+        "price": 1999,
+        "stock": 20,
+        "vendedor": "654d0489f034f7335f833382"
+    },
+    {
+        "title": "Las edades de la rata",
+        "categoria": "comics",
+        "image": "https://imgur.com/RS4t4LJ.jpg",
+        "price": 3389,
+        "stock": 20,
+        "vendedor": "654d0489f034f7335f833382"
+    },
+    {
+        "title": "Esta mierda me supera",
+        "categoria": "comics",
+        "image": "https://imgur.com/kq0WF0u.jpg",
+        "price": 2049,
+        "stock": 20,
+        "vendedor": "654d0489f034f7335f833382"
+    },
+    {
+        "title": "Tomar refugio",
+        "categoria": "comics",
+        "image": "https://imgur.com/nGP2Hjd.jpg",
+        "price": 4919,
+        "stock": 20,
+        "vendedor": "654d0489f034f7335f833382"
+    },
+    {
+        "title": "Ideas, papel y lapiz",
+        "categoria": "ficcion",
+        "image": "https://imgur.com/bMcXzjd.jpg",
+        "price": 1846,
+        "stock": 20,
+        "vendedor": "654d0489f034f7335f833382"
+    },
+    {
+        "title": "El amor esa gran encrusijada",
+        "categoria": "ficcion",
+        "image": "https://imgur.com/08KsJtZ.jpg",
+        "price": 2035,
+        "stock": 20,
+        "vendedor": "654d0489f034f7335f833382"
+    },
+    {
+        "title": "Hablame de ti",
+        "categoria": "ficcion",
+        "image": "https://imgur.com/E7VlPrm.jpg",
+        "price": 1430,
+        "stock": 20,
+        "vendedor": "654d0489f034f7335f833382"
+    },
+    {
+        "title": "Como la vida misma",
+        "categoria": "ficcion",
+        "image": "https://imgur.com/pT3jlty.jpg",
+        "price": 2158,
+        "stock": 20,
+        "vendedor": "654d0489f034f7335f833382"
+    },
+    {
+        "title": "El dia menos pensado",
+        "categoria": "ficcion",
+        "image": "https://imgur.com/PrLxduI.jpg",
+        "price": 2499,
+        "stock": 20,
+        "vendedor": "654d0489f034f7335f833382"
+    },
+    {
+        "title": "El viajero galactico",
+        "categoria": "ficcion",
+        "image": "https://imgur.com/8zOHABf.jpg",
+        "price": 4303,
+        "stock": 20,
+        "vendedor": "654d0489f034f7335f833382"
+    },
+    {
+        "title": "Los ojos del che",
+        "categoria": "historia",
+        "image": "https://imgur.com/XABdfvP.jpg",
+        "price": 3819,
+        "stock": 20,
+        "vendedor": "654d0489f034f7335f833382"
+    },
+    {
+        "title": "Que hubiera pasado si..?",
+        "categoria": "historia",
+        "image": "https://imgur.com/8zv3SKk.jpg",
+        "price": 4009,
+        "stock": 20,
+        "vendedor": "654d0489f034f7335f833382"
+    },
+    {
+        "title": "Masacre en el comedor",
+        "categoria": "historia",
+        "image": "https://imgur.com/R7JdEw1.jpg",
+        "price": 2849,
+        "stock": 20,
+        "vendedor": "654d0489f034f7335f833382"
+    },
+    {
+        "title": "Malvinas identidad de heroes",
+        "categoria": "historia",
+        "image": "https://imgur.com/uSKXEOq.jpg",
+        "price": 2699,
+        "stock": 20,
+        "vendedor": "654d0489f034f7335f833382"
+    },
+    {
+        "title": "La comida en la historia argentina",
+        "categoria": "historia",
+        "image": "https://imgur.com/dawYu65.jpg",
+        "price": 2849,
+        "stock": 20,
+        "vendedor": "654d0489f034f7335f833382"
+    },
+    {
+        "title": "Un maldito derecho",
+        "categoria": "historia",
+        "image": "https://imgur.com/dHeTfIY.jpg",
+        "price": 1800,
+        "stock": 20,
+        "vendedor": "654d0489f034f7335f833382"
+    },
+    {
+        "title": "52 juegos divertidos",
+        "categoria": "infantil",
+        "image": "https://imgur.com/8xxohYE.jpg",
+        "price": 985,
+        "stock": 20,
+        "vendedor": "654d0489f034f7335f833382"
+    },
+    {
+        "title": "Destroza este diario",
+        "categoria": "infantil",
+        "image": "https://imgur.com/fEAr5qP.jpg",
+        "price": 2570,
+        "stock": 20,
+        "vendedor": "654d0489f034f7335f833382"
+    },
+    {
+        "title": "Red, la novela",
+        "categoria": "infantil",
+        "image": "https://imgur.com/Ncw1Mqe.jpg",
+        "price": 2090,
+        "stock": 20,
+        "vendedor": "654d0489f034f7335f833382"
+    },
+    {
+        "title": "Enciclopedia de animales",
+        "categoria": "infantil",
+        "image": "https://imgur.com/cx7HRTl.jpg",
+        "price": 3095,
+        "stock": 20,
+        "vendedor": "654d0489f034f7335f833382"
+    },
+    {
+        "title": "Jardineria y huertos familiares",
+        "categoria": "infantil",
+        "image": "https://imgur.com/61PToi4.jpg",
+        "price": 3095,
+        "stock": 20,
+        "vendedor": "654d0489f034f7335f833382"
+    },
+    {
+        "title": "Los mundos de caroline",
+        "categoria": "infantil",
+        "image": "https://imgur.com/w4nK4um.jpg",
+        "price": 2049,
+        "stock": 20,
+        "vendedor": "654d0489f034f7335f833382"
+    }
+]
