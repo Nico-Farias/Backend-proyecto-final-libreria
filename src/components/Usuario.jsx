@@ -11,12 +11,13 @@ export default function BasicMenu() {
 
   const { carrito } = useProduct();
 
+  /*
   const totalQty = () => {
     return carrito.reduce((total, item) => {
       return total + item.qty;
     }, 0);
   };
-
+*/
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -81,7 +82,7 @@ export default function BasicMenu() {
             src="../../public/icons8-shopping-cart-50.png"
             alt="logoCart"
           />
-          <p>{totalQty()}</p>
+          <p>{}</p>
         </a>
       </div>
     </div>

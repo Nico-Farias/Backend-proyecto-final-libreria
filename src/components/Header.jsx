@@ -11,9 +11,6 @@ const Header = () => {
           <img className="w-28 rounded-full" src="/ClickShop.jpg" alt="Logo" />
           <span className="text-white  text-lg font-extrabold">ClickBOOK</span>
         </a>
-        <div>
-          <BuscadorNav />
-        </div>{" "}
       </div>
 
       <div className="flex items-center justify-around space-x-4 md:space-x-8 mt-5">

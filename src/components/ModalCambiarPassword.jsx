@@ -23,20 +23,23 @@ const style = {
   p: 4,
 };
 
-const ModalDeleteProduct = () => {
+const ModalCambiarPassword = () => {
   const [open, setOpen] = React.useState(false);
-  const [id, setId] = useState("");
+  const [passwordActual, setPasswordActual] = useState("");
+  const [newPassword, setNewPassword] = useState("");
+  const [repetirPassword, setRepetirPassword] = useState("");
 
   const [alerta, setAlerta] = useState({});
   const { auth } = useAuth();
   const { buscarProductPorId } = useProduct();
 
   const user = auth.user;
+  const userId = user._id;
 
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
-  const handleDeleteProduct = async (e) => {
+  const handleUpdatePassword = async (e) => {
     e.preventDefault();
 
     const token = localStorage.getItem("token");
@@ -47,24 +50,11 @@ const ModalDeleteProduct = () => {
       },
     };
 
-    const prod = await buscarProductPorId(id);
-
-    if (prod === undefined || prod === null) {
+    if (newPassword !== repetirPassword) {
       setAlerta({
-        msg: "Producto no encontrado",
+        msg: "Las password no coinciden",
         error: true,
       });
-      setTimeout(() => {
-        setAlerta({});
-      }, 3000);
-      return;
-    }
-    if (user._id !== prod.vendedor) {
-      setAlerta({
-        msg: "Solo el creador puede eliminar el producto",
-        error: true,
-      });
-
       setTimeout(() => {
         setAlerta({});
       }, 3000);
@@ -72,16 +62,22 @@ const ModalDeleteProduct = () => {
     }
 
     try {
-      await clienteAxios.delete(`/products/delete-product/${id}`, config);
+      const { data } = await clienteAxios.put(
+        `/users/update-password`,
+        { userId, passwordActual, newPassword },
+        config
+      );
 
       setAlerta({
-        msg: "Producto eliminado correctamente",
+        msg: data.msg,
         error: false,
       });
 
       setTimeout(() => {
+        setNewPassword("");
+        setPasswordActual("");
+        setRepetirPassword("");
         setAlerta({});
-        setId("");
       }, 3000);
     } catch (error) {
       setAlerta({
@@ -90,7 +86,6 @@ const ModalDeleteProduct = () => {
       });
       setTimeout(() => {
         setAlerta({});
-        setId("");
       }, 3000);
     }
   };
@@ -101,9 +96,9 @@ const ModalDeleteProduct = () => {
     <div>
       <button
         onClick={handleOpen}
-        className="bg-red-500 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded-full mt-2"
+        className="mt-5 bg-indigo-300 p-1 rounded-md font-semibold hover:bg-indigo-500"
       >
-        Eliminar Producto
+        Actualizar password
       </button>
       <Modal
         aria-labelledby="transition-modal-title"
@@ -121,29 +116,57 @@ const ModalDeleteProduct = () => {
         <Fade in={open}>
           <Box sx={style}>
             <Typography id="transition-modal-title" variant="h6" component="h2">
-              Producto a eliminar
+              ACTUALIZAR PASSWORD
             </Typography>
 
             <div>{msg && <Alerta alerta={alerta} />}</div>
             <div className="w-full max-w-md mx-auto">
               <form
-                onSubmit={handleDeleteProduct}
+                onSubmit={handleUpdatePassword}
                 className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
               >
                 <div className="mb-4">
                   <label
                     className="block text-gray-700 text-sm font-bold mb-2"
-                    htmlFor="title"
+                    htmlFor="passwordActual"
                   >
-                    Id del producto a eliminar
+                    Password actual
                   </label>
                   <input
                     className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                    id="title"
-                    type="text"
-                    placeholder="Título"
-                    value={id || ""}
-                    onChange={(e) => setId(e.target.value)}
+                    id="passwordActual"
+                    type="password"
+                    placeholder="Tu password actual"
+                    value={passwordActual}
+                    onChange={(e) => setPasswordActual(e.target.value)}
+                  />
+                  <label
+                    className="block text-gray-700 text-sm font-bold mb-2"
+                    htmlFor="nuevaPassword"
+                  >
+                    Nueva password
+                  </label>
+                  <input
+                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    id="nuevaPassword"
+                    type="password"
+                    placeholder="Nueva password"
+                    value={newPassword}
+                    onChange={(e) => setNewPassword(e.target.value)}
+                  />
+                  <label
+                    className="block text-gray-700 text-sm font-bold mb-2"
+                    htmlFor="repetirPassword"
+                  >
+                    repetir nueva password
+                  </label>
+                  <input
+                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    id="repetirPassword"
+                    type="password"
+                    placeholder="Nueva password"
+                    value={repetirPassword}
+                    onChange={(e) => setRepetirPassword(e.target.value)}
                   />
                 </div>
 
@@ -152,7 +175,7 @@ const ModalDeleteProduct = () => {
                     className="bg-blue-500 hover:bg-blue-700 text-white  font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                     type="submit"
                   >
-                    ELIMINAR PRODUCTO
+                    ACTUALIZAR PASSWORD
                   </button>
                 </div>
               </form>
@@ -164,4 +187,4 @@ const ModalDeleteProduct = () => {
   );
 };
 
-export default ModalDeleteProduct;
+export default ModalCambiarPassword;

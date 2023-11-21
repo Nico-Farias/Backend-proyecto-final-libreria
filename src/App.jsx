@@ -9,6 +9,8 @@ import { AuthProvider } from "./context/AuthProvider";
 import { ProductProvider } from "./context/ProductProvider";
 import Register from "./pages/register";
 import Profile from "./pages/Profile";
+import RecuperarPassword from "./pages/RecuperarPassword";
+import CambiarPassword from "./pages/CambiarContraseña";
 
 function App() {
   return (
@@ -19,6 +21,14 @@ function App() {
             <Routes>
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
+              <Route
+                path="/recuperar-password"
+                element={<RecuperarPassword />}
+              />
+              <Route
+                path="/reset-password/:tokenReset"
+                element={<CambiarPassword />}
+              />
 
               <Route path="/" element={<Inicio />}>
                 <Route index element={<PagePrincipal />} />

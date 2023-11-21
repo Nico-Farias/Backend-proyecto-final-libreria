@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import useAuth from "../hooks/useAuth";
 import ModalNuevoProduct from "../components/ModalNuevoProduct";
 import ModalUpdateProduct from "../components/ModalUpdateProduct";
 import ModalDeleteProduct from "../components/ModalDeleteProduct";
+import clienteAxios from "../axios/clienteAxios";
+import InfoUser from "../components/InfoUser";
+import ModalCambiarPassword from "../components/ModalCambiarPassword";
 
 const Profile = () => {
-  const { auth } = useAuth();
+  const { auth, usuarios } = useAuth();
   const user = auth.user;
 
   if (!user) {
@@ -38,6 +41,7 @@ const Profile = () => {
               </span>{" "}
             </p>
             <p className="text-2xl font-semibold pt-2">Email: {email}</p>
+            <ModalCambiarPassword />
           </div>
         </div>
       </div>
@@ -50,6 +54,20 @@ const Profile = () => {
               <ModalNuevoProduct />
               <ModalDeleteProduct />
               <ModalUpdateProduct />
+            </div>
+          </div>
+        ) : (
+          "No pueden hacer nada"
+        )}
+      </div>
+      <div className="bg-white rounded-lg  text-center  shadow-2xl m-10 p-10 ">
+        {admin ? (
+          <div className=" pl-4 text-center mt-5">
+            <h3 className="text-2xl font-semibold">Administrar Usuarios</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 items-center mt-10 ">
+              {usuarios.map((user) => (
+                <InfoUser key={user._id} user={user} />
+              ))}
             </div>
           </div>
         ) : (

@@ -39,14 +39,6 @@ const Login = () => {
       setAlerta({});
       localStorage.setItem("token", data.token);
       setAuth(data);
-      const carritoGuardado = localStorage.getItem("carrito");
-      if (!carritoGuardado) {
-        console.log("No hay carrito guardado en el localStorage");
-      } else {
-        const carritoParseado = JSON.parse(carritoGuardado);
-        setCarrito(carritoParseado);
-        console.log("Carrito Parseado", carritoParseado);
-      }
 
       // Redirigir a la página principal
       navigate("/");
@@ -126,12 +118,12 @@ const Login = () => {
             </div>
 
             <div className="text-sm">
-              <a
-                href="#"
+              <Link
+                to={"/recuperar-password"}
                 className="font-medium text-indigo-600 hover:text-indigo-500"
               >
                 ¿Olvidaste tu contraseña?
-              </a>
+              </Link>
             </div>
           </div>
 

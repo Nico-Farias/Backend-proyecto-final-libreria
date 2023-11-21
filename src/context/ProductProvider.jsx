@@ -9,11 +9,12 @@ const ProductProvider = ({ children }) => {
   const [categoria, setCategoria] = useState([]);
   const [selectCategory, setSelectCategory] = useState(null);
   const [carrito, setCarrito] = useState([]);
+  const [itemQty, setItemQty] = useState(0);
 
   useEffect(() => {
     const obtenerProductos = async () => {
       try {
-        const { data } = await clienteAxios("/products");
+        const { data } = await clienteAxios(`/products`);
         setProducts(data);
       } catch (error) {
         console.log(error.message);
@@ -33,13 +34,45 @@ const ProductProvider = ({ children }) => {
     const storedCarrito = localStorage.getItem("carrito");
     if (storedCarrito) {
       const parsedCarrito = JSON.parse(storedCarrito);
+
       setCarrito(parsedCarrito);
     }
   }, []);
 
-  const deleteProductCart = (id) => {
-    const cartActualizado = carrito.filter((prod) => prod._id !== id);
-    setCarrito(cartActualizado);
+  const deleteProductCart = async (userId, prodId) => {
+    const token = localStorage.getItem("token");
+
+    if (!token) {
+      return;
+    }
+
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    };
+
+    try {
+      const { data } = await clienteAxios.put(
+        `/users/update-cart/${userId}/${prodId}`,
+        { userId },
+        config
+      );
+
+      const carritoStorage = localStorage.getItem("carrito");
+      const carritoParseado = JSON.parse(carritoStorage);
+
+      const updatedCarrito = carritoParseado.filter((item) => {
+        return item.product._id !== prodId;
+      });
+
+      // Actualizar el estado con el carrito actualizado
+      setCarrito(updatedCarrito);
+      localStorage.setItem("carrito", JSON.stringify(updatedCarrito));
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const filterProducts = () => {
@@ -81,8 +114,6 @@ const ProductProvider = ({ children }) => {
         Authorization: `Bearer ${token}`,
       },
     };
-    console.log(token);
-    console.log(config);
 
     try {
       const { data } = await clienteAxios.post(
@@ -90,11 +121,48 @@ const ProductProvider = ({ children }) => {
         { userId, qty },
         config
       );
-      console.log("data", data);
-      setCarrito(data);
-      localStorage.setItem("carrito", JSON.stringify(data));
+
+      // Actualizar el estado del carrito
+      const updatedCart = data;
+      setCarrito(updatedCart);
+      console.log(updatedCart);
+      // Guardar el carrito actualizado en localStorage
+      localStorage.setItem("carrito", JSON.stringify(updatedCart));
     } catch (error) {
       console.log("Error en la solicitud:", error);
+    }
+  };
+
+  const sumarCantidad = (qty) => {
+    const cantidad = itemQty + qty;
+    setItemQty(cantidad);
+  };
+
+  const finalizarCompra = async (userId) => {
+    const token = localStorage.getItem("token");
+
+    if (!token) {
+      return;
+    }
+
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    };
+
+    try {
+      const { data } = await clienteAxios.post(
+        `/users/finalizar-compra`,
+        { userId },
+        config
+      );
+      localStorage.removeItem("carrito");
+      setCarrito({});
+      console.log(data);
+    } catch (error) {
+      console.log(error);
     }
   };
 
@@ -116,6 +184,9 @@ const ProductProvider = ({ children }) => {
         carrito,
         setCarrito,
         deleteProductCart,
+        finalizarCompra,
+        setItemQty,
+        itemQty,
       }}
     >
       {children}
