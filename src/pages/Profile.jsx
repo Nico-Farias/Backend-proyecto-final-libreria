@@ -57,7 +57,10 @@ const Profile = () => {
             </div>
           </div>
         ) : (
-          "No pueden hacer nada"
+          <h3 className="text-2xl font-semibold">
+            Solo el administrador o los usuarios premium pueden administrar los
+            productos
+          </h3>
         )}
       </div>
       <div className="bg-white rounded-lg  text-center  shadow-2xl m-10 p-10 ">
@@ -71,7 +74,9 @@ const Profile = () => {
             </div>
           </div>
         ) : (
-          "No pueden hacer nada"
+          <h3 className="text-2xl font-semibold">
+            Solo el administrador puede administrar los usuarios
+          </h3>
         )}
       </div>
     </div>
