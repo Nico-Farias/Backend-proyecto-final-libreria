@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import * as React from "react";
 import useAuth from "../hooks/useAuth";
 import ModalNuevoProduct from "../components/ModalNuevoProduct";
 import ModalUpdateProduct from "../components/ModalUpdateProduct";
@@ -6,13 +6,19 @@ import ModalDeleteProduct from "../components/ModalDeleteProduct";
 import clienteAxios from "../axios/clienteAxios";
 import InfoUser from "../components/InfoUser";
 import ModalCambiarPassword from "../components/ModalCambiarPassword";
+import Stack from "@mui/material/Stack";
+import CircularProgress from "@mui/material/CircularProgress";
 
 const Profile = () => {
   const { auth, usuarios } = useAuth();
   const user = auth.user;
 
   if (!user) {
-    return <p>Loading...</p>;
+    return (
+      <Stack sx={{ color: "grey.500" }} spacing={2} direction="row">
+        <CircularProgress color="success" />
+      </Stack>
+    );
   }
 
   const { nombre, apellido, email, role, admin } = user;

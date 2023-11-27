@@ -2,6 +2,8 @@ import React from "react";
 import { useState } from "react";
 import useProduct from "../hooks/useProduct";
 import useAuth from "../hooks/useAuth";
+import Swal from "sweetalert2/dist/sweetalert2.js";
+import "sweetalert2/src/sweetalert2.scss";
 
 function CardLibro({ product }) {
   const [quantity, setQuantity] = useState(1);
@@ -10,6 +12,13 @@ function CardLibro({ product }) {
   const { auth } = useAuth();
 
   const handleToCart = () => {
+    Swal.fire({
+      position: "top-end",
+      icon: "success",
+      title: "El producto se agrego al carrito correctamnete",
+      showConfirmButton: false,
+      timer: 1500,
+    });
     const userId = auth.user._id;
     const idProd = product._id;
     const qty = quantity;

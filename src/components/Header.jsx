@@ -8,8 +8,12 @@ const Header = () => {
     <div className="bg-sky-700 py-4 p-4 w-screen">
       <div className=" flex justify-around items-center gap-10">
         <a href="/" className="flex gap-4 items-center ">
-          <img className="w-28 rounded-full" src="/ClickShop.jpg" alt="Logo" />
-          <span className="text-white  text-lg font-extrabold">ClickBOOK</span>
+          <img
+            className="w-28 p-4 bg-white rounded-full"
+            src="/LogoBook.png"
+            alt="Logo"
+          />
+          <span className="text-white  text-lg font-extrabold"> ClickBOOK</span>
         </a>
       </div>
 

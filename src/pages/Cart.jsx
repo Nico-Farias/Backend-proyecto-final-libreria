@@ -1,13 +1,12 @@
-import React, { useState, useEffect } from "react";
 import useProduct from "../hooks/useProduct";
 import useAuth from "../hooks/useAuth";
-import { Link } from "react-router-dom";
-import clienteAxios from "../axios/clienteAxios";
+
 import DetailsCart from "../components/DetailsCart";
+import Swal from "sweetalert2/dist/sweetalert2.js";
+import "sweetalert2/src/sweetalert2.scss";
 
 const Cart = () => {
-  const { carrito, deleteProductCart, finalizarCompra, setCarrito } =
-    useProduct();
+  const { carrito, finalizarCompra } = useProduct();
   const { auth } = useAuth();
 
   const totalCart = () => {
@@ -17,6 +16,35 @@ const Cart = () => {
   };
 
   const handleFinalizarCompra = () => {
+    let timerInterval;
+    Swal.fire({
+      title: "Tu pedido esta siendo procesado...",
+      html: " Gracias por su compra",
+      timer: 2000,
+      timerProgressBar: true,
+      didOpen: () => {
+        Swal.showLoading();
+        const timer = Swal.getPopup().querySelector("b");
+        timerInterval = setInterval(() => {
+          timer.textContent = `${Swal.getTimerLeft()}`;
+        }, 100);
+      },
+      willClose: () => {
+        clearInterval(timerInterval);
+      },
+    }).then((result) => {
+      /* Read more about handling dismissals below */
+      if (result.dismiss === Swal.DismissReason.timer) {
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "Tu pedido se completo correctamente",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      }
+    });
+
     const userId = auth.user._id;
 
     finalizarCompra(userId);

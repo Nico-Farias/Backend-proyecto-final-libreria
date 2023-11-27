@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-
 import clienteAxios from "../axios/clienteAxios";
 import useAuth from "../hooks/useAuth";
 import Alerta from "../components/Alerta";
@@ -41,6 +40,7 @@ const Login = () => {
       setAuth(data);
 
       // Redirigir a la página principal
+
       navigate("/");
     } catch (error) {
       setAlerta({
