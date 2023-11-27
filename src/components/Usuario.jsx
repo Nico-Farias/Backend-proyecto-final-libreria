@@ -70,7 +70,7 @@ export default function BasicMenu() {
         <a className="flex justify-center items-center" href="/carrito">
           <img
             className="w-8 h-8 "
-            src="../../public/icons8-shopping-cart-50.png"
+            src="/icons8-shopping-cart-50.png"
             alt="logoCart"
           />
         </a>
