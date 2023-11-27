@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const clienteAxios = axios.create({
-     baseURL: `http://localhost:4000/api`
+     baseURL: `https://libreria-online.onrender.com/api`
 })
 
 export default clienteAxios;
