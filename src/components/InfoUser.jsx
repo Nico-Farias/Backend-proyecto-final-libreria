@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import clienteAxios from "../axios/clienteAxios.js";
+import Swal from "sweetalert2/dist/sweetalert2.js";
+import "sweetalert2/src/sweetalert2.scss";
 
 const InfoUser = ({ user }) => {
   const [editedUser, setEditedUser] = useState(user);
@@ -35,12 +37,17 @@ const InfoUser = ({ user }) => {
         { editedUser },
         config
       );
-      console.log("Data", data);
     } catch (error) {
       console.log(error);
     }
 
-    console.log("Usuario editado:", editedUser);
+    Swal.fire({
+      position: "center",
+      icon: "success",
+      title: "Usuario moficado correctamente",
+      showConfirmButton: false,
+      timer: 1200,
+    });
   };
 
   return (
